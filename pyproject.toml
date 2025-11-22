@@ -1,0 +1,10 @@
+[project]
+name = "cse101-termproject"
+version = "0.1.0"
+dependencies = ["rich", "pyfiglet", "pydantic"]
+
+[project.scripts]
+fitness-app = "main:main"
+
+[project.optional-dependencies]
+dev = ["pytest"]
