@@ -1,8 +1,12 @@
 from rich.console import Console
+from rich.live import Live
 from rich.padding import Padding
 from rich.text import Text
+
 import pyfiglet
 
+from models import AppState, User
+from screens import Dashboard
 import storage
 
 def main():
@@ -22,7 +26,14 @@ def main():
   users = storage.load_users()
   for user in users:
     if user.name == name and user.password == password:
-      console.print(f"Welcome, {user.name}!", style="bold green")
+      user = User(name=name, password=password)
+      state = AppState(user=user, screen=Dashboard())
+
+      with Live(state.screen, screen=True) as live:
+        while True:
+          state.screen.update()
+          live.update(state.screen)
+      
       break
   else:
     console.print("Invalid username or password.", style="bold red")
