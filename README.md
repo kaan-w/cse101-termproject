@@ -26,7 +26,7 @@ nix run github:kaan-w/cse101-termproject
 3. Direct execution
 ```bash
 # install dependencies
-pip install rich pyfiglet pydantic
+pip install -r requirements.txt
 
 # run the applicaiton 
 python3 src/main.py
