@@ -6,6 +6,7 @@ from datetime import datetime
 
 from models import Component
 
+
 @dataclass
 class Header(Component):
   screen_name: str
@@ -18,9 +19,7 @@ class Header(Component):
     grid.add_column(justify="right")
 
     grid.add_row(
-      "Fitness App",
-      self.screen_name,
-      datetime.now().strftime("%H:%M:%S %d/%m/%Y")
+      "Fitness App", self.screen_name, datetime.now().strftime("%H:%M:%S %d/%m/%Y")
     )
-    
+
     return Panel(grid, style="bold")

@@ -8,3 +8,6 @@ fitness-app = "main:main"
 
 [project.optional-dependencies]
 dev = ["pytest"]
+
+[tool.ruff]
+indent-width = 2

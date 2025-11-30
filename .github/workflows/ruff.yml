@@ -1,0 +1,24 @@
+name: Ruff
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  ruff:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Ruff
+        uses: astral-sh/ruff-action@v3
+        with:
+          version: "latest"
+          args: "--version"
+
+      - name: Ruff Check
+        run: ruff check --output-format=github
+
+      - name: Ruff Format
+        run: ruff format --check --diff

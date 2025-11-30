@@ -4,10 +4,12 @@ from rich.padding import Padding
 from rich.text import Text
 
 import pyfiglet
+import time
 
 from models import AppState, User
 from screens import Dashboard
 import storage
+
 
 def main():
   console = Console(highlight=False)
@@ -33,10 +35,12 @@ def main():
         while True:
           state.screen.update()
           live.update(state.screen)
-      
+          time.sleep(0.25)
+
       break
   else:
     console.print("Invalid username or password.", style="bold red")
+
 
 if __name__ == "__main__":
   main()
