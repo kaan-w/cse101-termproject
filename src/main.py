@@ -33,7 +33,6 @@ def main():
 
       with Live(state.screen, screen=True) as live:
         while True:
-          state.screen.update()
           live.update(state.screen)
           time.sleep(0.25)
 

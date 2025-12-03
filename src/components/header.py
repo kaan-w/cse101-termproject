@@ -4,7 +4,7 @@ from rich.table import Table
 from dataclasses import dataclass
 from datetime import datetime
 
-from models import Component
+from ._base import Component
 
 
 @dataclass
